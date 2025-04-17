@@ -7,14 +7,15 @@ const CavansEnv = () => {
     return (
         <>
             <OrbitControls
-                minDistance={10}
-                maxDistance={400}
+                // minDistance={10}
+                // maxDistance={400}
                 dampingFactor={0.5}
                 rotateSpeed={0.5}
             />
-            <Environment files={'/assets/background/hilly_terrain_01_8k.hdr'} background blur={1} />
+            <Environment preset='city' background backgroundIntensity={1.5} blur={1} />
             <Ground />
             <Lights />
+            <axesHelper position={[0, 0, 0]} args={[50, 50, 50]} />
         </>
     )
 }

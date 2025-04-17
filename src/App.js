@@ -9,9 +9,9 @@ function App() {
         <div className="App">
             <Canvas
                 camera={{
-                    position: [0, 0, 10],
+                    position: [0, 5, 10],
                     fov: 45,
-                    near: 1,
+                    near: 0.001,
                     far: 100000
                 }}
                 style={{
