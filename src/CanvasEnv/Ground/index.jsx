@@ -3,20 +3,20 @@ import React from 'react'
 
 const Ground = () => {
     const gridConfig = {
-      cellSize: 2.5,
+      cellSize: 5,
       cellThickness: 0.7,
       cellColor: '#BBBBBB',
-      sectionSize: 5,
+      sectionSize: 10,
       sectionThickness: 1,
       sectionColor: '#FFFFFF',
-      fadeDistance: 100,
-      fadeStrngth: 30,
+      fadeDistance: 300,
+      fadeStrngth: 70,
       followCamera: true,
       infinitedGrid: false
     }
 
     return (
-        <Grid position={[0, 0, 0]} args={[300, 300]} {...gridConfig} />
+        <Grid position={[0, 0, 0]} args={[1000, 1000]} {...gridConfig} />
     )
 }
 
