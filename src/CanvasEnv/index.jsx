@@ -16,7 +16,7 @@ const CavansEnv = () => {
             <Environment preset='city' background backgroundIntensity={1.5} blur={1} />
             <Ground />
             <Lights />
-            <axesHelper position={[0, 0, 0]} args={[50, 50, 50]} />
+            {/* <axesHelper position={[0, 0, 0]} args={[50, 50, 50]} /> */}
         </>
     )
 }

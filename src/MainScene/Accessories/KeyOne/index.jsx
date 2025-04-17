@@ -73,7 +73,7 @@ const KeyOne = () => {
     return (
         <group>
             <primitive object={keyOneSourceGLB.scene} position={[-17, 0, 1]} scale={30} />
-            <group position={[5, 31, -0.7]} rotation={[Math.PI / 2, 0, 0]} scale={1.22}>
+            <group  position={[9.75, 28, -0.6]} rotation={[Math.PI / 2, 0, 0]} scale={1.22}>
                 <mesh name='round-part-model' position={[0, 0, 0]}>
                     <latheGeometry args={[roundPartPoints, 64]} />
                     <MaterialKey />
