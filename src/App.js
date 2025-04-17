@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import { Canvas } from '@react-three/fiber';
+
 import './App.css';
+import CavansEnv from './CanvasEnv';
+import MainScene from './MainScene';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Canvas
+                camera={{
+                    position: [0, 0, 10],
+                    fov: 45,
+                    near: 1,
+                    far: 100000
+                }}
+                style={{
+                    height: '100vh'
+                }}
+            >
+                <CavansEnv />
+                <MainScene />
+            </Canvas>
+        </div>
+    );
 }
 
 export default App;
