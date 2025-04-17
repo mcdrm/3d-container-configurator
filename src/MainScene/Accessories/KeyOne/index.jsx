@@ -70,27 +70,25 @@ const KeyOne = () => {
     
     const keyOneSourceGLB = useGLTF('/assets/key_one_source.glb');
     
-    const color = '#FFFFFF'
-    
     return (
-        <group position={[0, 10, 0]}>
-            <primitive object={keyOneSourceGLB.scene} position={[-20, -31, 1]} scale={30} />
-            <group position={[0, 0, -0.7]} rotation={[Math.PI / 2, 0, 0]} scale={1.3}>
+        <group>
+            <primitive object={keyOneSourceGLB.scene} position={[-17, 0, 1]} scale={30} />
+            <group position={[5, 31, -0.7]} rotation={[Math.PI / 2, 0, 0]} scale={1.22}>
                 <mesh name='round-part-model' position={[0, 0, 0]}>
                     <latheGeometry args={[roundPartPoints, 64]} />
-                    <meshPhysicalMaterial color={color} metalness={0.5} roughness={0.2} side={THREE.FrontSide} />
+                    <MaterialKey />
                 </mesh>
                 <mesh name='key-part-1-model' position={[0, roundShapeHeight + roundShaoeCurveOffset + 0.01, 0]} rotation={[-Math.PI / 2, 0, 0]}>
                     <extrudeGeometry args={[keyShapePart_1, extrudeSettings(keyShapePart1_thickness, 0.01, 0.01, 0, 12)]} />
-                    <meshPhysicalMaterial color={color} metalness={0.5} roughness={0.2}  side={THREE.FrontSide} />
+                    <MaterialKey />
                 </mesh>
                 <mesh name='key-part-2-model' position={[0, roundShapeHeight + roundShaoeCurveOffset + keyShapePart1_thickness + 0.03, 0]} rotation={[-Math.PI / 2, 0, 0]}>
                     <extrudeGeometry args={[keyShapePart_2, extrudeSettings(keyShapePart2_thickness, 0.01, 0.01, 0, 12)]} />
-                    <meshPhysicalMaterial color={color} metalness={0.5} roughness={0.2}  side={THREE.FrontSide} />
+                    <MaterialKey />
                 </mesh>
                 <mesh name='key-part-3-model' position={[-keyShapePart2_width, roundShapeHeight + roundShaoeCurveOffset + keyShapePart1_thickness + keyShapePart3_width / 2 + 0.03, keyShapePart3_thickness / 2]} rotation={[Math.PI, 0, 0]}>
                     <extrudeGeometry args={[keyShapePart_3, extrudeSettings(keyShapePart3_thickness, 0.01, 0.01, 0, 12)]} />
-                    <meshPhysicalMaterial color={color} metalness={0.5} roughness={0.2}  side={THREE.FrontSide} />
+                    <MaterialKey />
                 </mesh>
             </group>
         </group>
@@ -98,3 +96,12 @@ const KeyOne = () => {
 }
 
 export default KeyOne
+
+const MaterialKey = () => {
+    const mainColor = '#FFFFFF'
+    const emissiveColor = '#666666'
+
+    return (
+        <meshPhysicalMaterial color={mainColor} emissive={emissiveColor} metalness={0.8} roughness={0.1}  side={THREE.FrontSide} />
+    )
+}

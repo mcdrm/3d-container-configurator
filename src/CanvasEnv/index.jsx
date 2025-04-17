@@ -7,6 +7,7 @@ const CavansEnv = () => {
     return (
         <>
             <OrbitControls
+                target={[0, 30, 0]}
                 // minDistance={10}
                 // maxDistance={400}
                 dampingFactor={0.5}
